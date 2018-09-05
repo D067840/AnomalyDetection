@@ -54,7 +54,7 @@ result2 <- c();
 for(datapoint in dataset){
   probability <- ((1/ sqrt(2*pi*sigmaSquare))* (exp(1) ^(-((datapoint - mu)^2) / (2*sigmaSquare))))
   #Log normal distribution
-  #probability <- ((1/(sqrt(sigmarQuadrat)*sqrt(2*pi)))*(1/datapoint)*(exp(1)^(-0.5*((log(datapoint)-müh)/sqrt(sigmarQuadrat)))))
+  #probability <- ((1/(sqrt(sigmarQuadrat)*sqrt(2*pi)))*(1/datapoint)*(exp(1)^(-0.5*((log(datapoint)-mÃ¼h)/sqrt(sigmarQuadrat)))))
   result2 <- c(result2, probability)                       
 }
 result2 <- data.frame(dataset, result2)
@@ -65,9 +65,3 @@ lines(data.frame(c(mu - 3*sqrt(sigmaSquare)), result2$result2), type="l", col="b
 #return entries which exceed the threshold
 indicies <- which(result2$dataset > (mu + 3*sqrt(sigmaSquare)))
 result2$dataset[indicies]
-
-
-
-
-
-
